@@ -107,6 +107,32 @@ void Matrix::readFile (void) {
 }
 
 /**
+ * @brief      Generate a vector with the matrix row.
+ * @param[in]  line  The line
+ * @return     The vector with the row items.
+ */
+std::vector<int> Matrix::generateRow (std::string line) {
+	std::vector<int> result;
+	std::string tmp = "";
+	for (unsigned i = 0; i < line.length(); i++) {
+		if ((line[i] == ' ') and (tmp.length() > 0)) {
+			result.push_back(std::stoi(tmp));
+			tmp = "";
+		}
+		else if (line[i] == '-') {
+			tmp += "-1";
+		}
+		else {
+			tmp += line[i];
+		}
+	}
+	if (tmp.length() > 0)
+		result.push_back(std::stoi(tmp));
+		
+	return result;
+}
+
+/**
  * @brief      Prints a matrix.
  */
 void Matrix::printMatrix (void) {
@@ -129,33 +155,4 @@ void Matrix::printMatrix (void) {
  */
 void Matrix::changeValue(unsigned id, unsigned element, int value) {
 	matrix_[id][element] = value;
-}
-
-/**
- * @brief      Generate a vector with the matrix row.
- *
- * @param[in]  line  The line
- *
- * @return     The vector with the row items.
- */
-std::vector<int> Matrix::generateRow (std::string line) {
-	std::vector<int> result;
-	std::string tmp = "";
-	for (unsigned i = 0; i < line.length(); i++) {
-		if ((line[i] == ' ') and (tmp.length() > 0)) {
-			result.push_back(std::stoi(tmp));
-			tmp = "";
-		}
-		else if (line[i] == '-') {
-			tmp += "-1";
-		}
-		else {
-			tmp += line[i];
-		}
-	}
-	
-	if (tmp.length() > 0)
-		result.push_back(std::stoi(tmp));
-		
-	return result;
 }

@@ -34,5 +34,5 @@ class Recomendation {
 		float similitude (unsigned idA, unsigned idB);
 		void resetNeighbors (unsigned id);
 		bool containsNeighbor (std::vector<User> n, unsigned id);
-		int prediction(unsigned id, unsigned element, unsigned predictionType);
+		float prediction(unsigned id, unsigned element, unsigned predictionType);
 };

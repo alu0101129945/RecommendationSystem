@@ -92,7 +92,7 @@ void Recomendation::runProgram (void) {
  * 
  * @param predictionType 
  */
-int Recomendation::prediction(unsigned id, unsigned element, unsigned predictionType) {
+float Recomendation::prediction(unsigned id, unsigned element, unsigned predictionType) {
 	float sumA = 0;
 	float sumB = 0;
 	float result = 0;
@@ -100,7 +100,7 @@ int Recomendation::prediction(unsigned id, unsigned element, unsigned prediction
 	for (unsigned i = 0; i < users_[id].get_Neighbors().size(); i++) {
 		unsigned idNeighbor = users_[i].get_Neighbors()[i].get_Id();
 		if (users_[id].get_Sim()[idNeighbor] < 0)
-			sumB += (users_[id].get_Sim()[idNeighbor] * -1);
+			sumB += (users_[id].get_Sim()[idNeighbor] * (-1));
 		else
 			sumB += users_[id].get_Sim()[idNeighbor];
 
@@ -113,9 +113,8 @@ int Recomendation::prediction(unsigned id, unsigned element, unsigned prediction
 			result = users_[id].get_Average() + (sumA / sumB);
 		}	
 	}
-	return static_cast<int>(result);
+	return int(result);
 }
-
 
 /**
  * @brief      Generate the users with the matrix.
@@ -177,7 +176,7 @@ float Recomendation::similitude (unsigned idA, unsigned idB) {
 				sumI += ((users_[idB].get_Valoration()[k] - users_[idB].get_Average()) * (users_[idB].get_Valoration()[k] - users_[idB].get_Average()));
 			}
 		}
-		similitude = (sumUxI / (std::sqrt(sumI) * std::sqrt(sumU)));
+		similitude = (sumUxI / (std::sqrt(sumU) * std::sqrt(sumI)));
 	}
 	else if (get_Type() == 2) {	// Coseno case
 		float sumUxI = 0.0;

@@ -24,8 +24,7 @@ Matrix::Matrix (std::string inputFile) {
 /**
  * @brief      Destroys the object.
  */
-Matrix::~Matrix (void) {
-}
+Matrix::~Matrix (void) {}
 
 unsigned Matrix::get_Rows (void) const {
 	return rows_;
@@ -142,7 +141,7 @@ std::vector<int> Matrix::generateRow (std::string line) {
 	std::vector<int> result;
 	std::string tmp = "";
 	for (unsigned i = 0; i < line.length(); i++) {
-		if ((line[i] == ' ' or line[i] == '\r' or line[i] == '\n') and (tmp.length() > 0)) {
+		if ((line[i] == ' ') and (tmp.length() > 0)) {
 			result.push_back(std::stoi(tmp));
 			tmp = "";
 		}
@@ -153,7 +152,9 @@ std::vector<int> Matrix::generateRow (std::string line) {
 			tmp += line[i];
 		}
 	}
+	
 	if (tmp.length() > 0)
 		result.push_back(std::stoi(tmp));
+		
 	return result;
 }

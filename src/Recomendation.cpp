@@ -96,7 +96,7 @@ int Recomendation::prediction(unsigned id, unsigned element, unsigned prediction
 	float sumA = 0;
 	float sumB = 0;
 	float result = 0;
-
+	
 	for (unsigned i = 0; i < users_[id].get_Neighbors().size(); i++) {
 		unsigned idNeighbor = users_[i].get_Neighbors()[i].get_Id();
 		if (users_[id].get_Sim()[idNeighbor] < 0)

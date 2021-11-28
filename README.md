@@ -38,4 +38,4 @@
 
 
 ## Ejemplo de uso.
-
+  Para ejecutar el programa, se debe colocar en la carpeta build, donde se encuentra el makefile para automatizar esta tarea. Una vez situado en ella, ejecutar **make run**. 

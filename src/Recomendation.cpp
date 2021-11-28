@@ -72,11 +72,11 @@ void Recomendation::runProgram (void) {
 						std::exit(0);
 						break;
 					case 1:
-						std::cout << std::endl << "Resultado de la predicción simple del usuario " << i << " en el elemento " << j << ": " << prediction(i, j, predictionType);
+						std::cout << std::endl << "Predicción simple del usuario " << i << " en el elemento " << j << ": " << prediction(i, j, predictionType);
 						matrix_.changeValue(i, j, prediction(i, j, predictionType));
 						break;
 					case 2:
-						std::cout << std::endl << "Resultado de la predicción diferencia con la media del usuario " << i << " en el elemento " << j << ": " << prediction(i, j, predictionType);
+						std::cout << std::endl << "Predicción diferencia con la media del usuario " << i << " en el elemento " << j << ": " << prediction(i, j, predictionType);
 						matrix_.changeValue(i, j, prediction(i, j, predictionType));
 						break;
 				}

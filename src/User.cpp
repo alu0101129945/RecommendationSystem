@@ -116,7 +116,8 @@ void User::addNeighbor (User newNeighbor) {
  * @brief      Prints an user.
  */
 void User::printUser (void) {
-    std::cout << std::endl << std::endl << "ID usuario: " << get_Id() << std::endl << "Media: " << average_ <<  std::endl << "Valoraciones: ";
+    std::cout << "Usuario: " << get_Id() << std::endl;
+    std::cout << "Valoraciones: ";
     for (unsigned i = 0; i < get_Valoration().size(); i++) {
         std::cout << "\t" << valoration_[i];
     }
@@ -130,6 +131,7 @@ void User::printUser (void) {
             std::cout << std::endl << "\tsim(Person" << id_ << ", Person" << i << ") = " << sim_[i];
         }
     }
+    std::cout << std::endl << std::endl;
 }
 
 /**

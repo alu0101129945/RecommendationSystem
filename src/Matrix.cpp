@@ -110,6 +110,7 @@ void Matrix::readFile (void) {
  * @brief      Prints a matrix.
  */
 void Matrix::printMatrix (void) {
+	std::cout << std::endl << " ---------------------- Matriz: ---------------------- " << std::endl;
 	for (unsigned i = 0; i < rows_; i++) {
 		std::cout << "\n|\t";
 		for (unsigned j = 0; j < columns_; j++) {

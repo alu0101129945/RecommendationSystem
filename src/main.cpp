@@ -16,6 +16,7 @@ int main (int argc, char* argv[]) {
 	else {
 		std::cout << "Modo de empleo: " << std::endl;
 		std::cout << "./recomendation [INPUTFILE] " << std::endl;
+		std::cout << "Esta tarea está automatizada en el makefile: make run" << std::endl;
 	}
 	return 0;
 }	
